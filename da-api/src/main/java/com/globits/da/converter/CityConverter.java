@@ -64,7 +64,7 @@ public class CityConverter {
                 if (!entity.getDistricts().isEmpty()) {
                     List<DistrictDTO> districtDTOS = new ArrayList<>();
                     for (District district : entity.getDistricts()) {
-                        DistrictDTO districtDTO = districtConverter.toDTO(district, true, true);
+                        DistrictDTO districtDTO = districtConverter.toDTO(district, false, true);
                         districtDTOS.add(districtDTO);
                     }
                     dto.setDistricts(districtDTOS);

@@ -3,6 +3,7 @@ package com.globits.da.domain;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "tbl_ward")
 public class Ward {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

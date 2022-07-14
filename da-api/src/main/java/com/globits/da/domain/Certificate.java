@@ -4,18 +4,16 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Table(name = "tbl_certificate")
 public class Certificate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String code;
     private String name;
-    @Temporal(TemporalType.DATE)
-    private Date validSince;
-    @Temporal(TemporalType.DATE)
-    private Date validUntil;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "city_id")
+
+    @ManyToOne (cascade = CascadeType.ALL)
+    @JoinTable(name = "employee_certificate", joinColumns = @JoinColumn(name = "city_id"), inverseJoinColumns = @JoinColumn(name = "certificate_id"))
     private City city;
 
     public Certificate() {
@@ -43,22 +41,6 @@ public class Certificate {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Date getValidSince() {
-        return validSince;
-    }
-
-    public void setValidSince(Date validSince) {
-        this.validSince = validSince;
-    }
-
-    public Date getValidUntil() {
-        return validUntil;
-    }
-
-    public void setValidUntil(Date validUntil) {
-        this.validUntil = validUntil;
     }
 
     public City getCity() {

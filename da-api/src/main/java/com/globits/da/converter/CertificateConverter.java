@@ -22,8 +22,6 @@ public class CertificateConverter {
                 entity = oldEntity;
             entity.setCode(dto.getCode());
             entity.setName(dto.getName());
-            entity.setValidSince(dto.getValidSince());
-            entity.setValidUntil(dto.getValidUntil());
             if (dto.getCity()!=null){
                 City city = null;
                 if (dto.getCity().getId()!=null){
@@ -43,8 +41,6 @@ public class CertificateConverter {
             dto.setId(entity.getId());
             dto.setCode(entity.getCode());
             dto.setName(entity.getName());
-            dto.setValidSince(entity.getValidSince());
-            dto.setValidUntil(entity.getValidUntil());
             if (entity.getCity()!=null){
                 CityDTO cityDTO = cityConverter.toDTO(entity.getCity(),false);
                 dto.setCity(cityDTO);

@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "employee_certificate")
+@Table(name = "tbl_employee_certificate")
 public class EmployeeCertificate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

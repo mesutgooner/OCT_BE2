@@ -36,6 +36,8 @@ public class EmployeeConverter {
                 entity = oldEntity;
             if (dto.getCode() != null)
                 entity.setCode(dto.getCode());
+            if (dto.getName()!=null)
+                entity.setName(dto.getName());
             if (dto.getEmail() != null)
                 entity.setEmail(dto.getEmail());
             if (dto.getPhone() != null)
@@ -77,9 +79,9 @@ public class EmployeeConverter {
             dto.setEmail(entity.getEmail());
             dto.setPhone(entity.getPhone());
             dto.setAge(entity.getAge());
-            CityDTO cityDTO = cityConverter.toDTO(entity.getCity(),false);
+            CityDTO cityDTO = cityConverter.toDTO(entity.getCity(),true);
             dto.setCity(cityDTO);
-            DistrictDTO districtDTO = districtConverter.toDTO(entity.getDistrict(),false,false);
+            DistrictDTO districtDTO = districtConverter.toDTO(entity.getDistrict(),false,true);
             dto.setDistrict(districtDTO);
             WardDTO wardDTO = wardConverter.toDTO(entity.getWard(),false);
             dto.setWard(wardDTO);

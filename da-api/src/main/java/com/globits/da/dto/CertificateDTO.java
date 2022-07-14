@@ -1,13 +1,13 @@
 package com.globits.da.dto;
 
+import com.globits.da.domain.City;
+
 import java.util.Date;
 
 public class CertificateDTO {
     private Long id;
     private String code;
     private String name;
-    private Date validSince;
-    private Date validUntil;
     private CityDTO city;
 
     public CertificateDTO() {
@@ -35,22 +35,6 @@ public class CertificateDTO {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Date getValidSince() {
-        return validSince;
-    }
-
-    public void setValidSince(Date validSince) {
-        this.validSince = validSince;
-    }
-
-    public Date getValidUntil() {
-        return validUntil;
-    }
-
-    public void setValidUntil(Date validUntil) {
-        this.validUntil = validUntil;
     }
 
     public CityDTO getCity() {

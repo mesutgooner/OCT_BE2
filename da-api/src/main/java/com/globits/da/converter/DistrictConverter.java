@@ -83,7 +83,7 @@ public class DistrictConverter {
             if (needWards) {
                 if (!entity.getWards().isEmpty()) {
                     for (Ward ward : entity.getWards()) {
-                        dto.getWards().add(wardConverter.toDTO(ward, true));
+                        dto.getWards().add(wardConverter.toDTO(ward, false));
                     }
                 }
             }
